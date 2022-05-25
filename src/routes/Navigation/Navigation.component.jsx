@@ -1,14 +1,18 @@
 import React from 'react'
+import './navigation.styles.scss'
 
 // ROUTE
 import { Outlet, Link } from 'react-router-dom'
+
+// LOGO COMPONENT FROM CREATE-REACT-APP
+import { ReactComponent as Logo } from '../../assets/crown.svg'
 
 const Navigation = () => {
   return (
     <>
       <nav className='navigation'>
         <Link className='logo-container' to='/'>
-          <div>Logo</div>
+          <Logo className='logo' />
         </Link>
 
         <div className='nav-links-container'>
