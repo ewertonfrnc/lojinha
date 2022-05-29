@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+
+// Firebase
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils'
+
+// Components
+import Button from '../Button/Button.component'
 import FormInput from '../FormInput/FormInput.component'
 
 import './sign-up-form.styles.scss'
@@ -90,9 +95,7 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <button type='submit' name=''>
-          Cadastrar
-        </button>
+        <Button buttonType='inverted'>Criar conta</Button>
       </form>
     </div>
   )
