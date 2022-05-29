@@ -3,6 +3,9 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils'
+import FormInput from '../FormInput/FormInput.component'
+
+import './sign-up-form.styles.scss'
 
 const defaultFormFields = {
   displayName: '',
@@ -33,7 +36,7 @@ const SignUpForm = () => {
 
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password)
-      
+
       await createUserDocumentFromAuth(user, { displayName })
       resetFormFields()
     } catch (error) {
@@ -46,12 +49,13 @@ const SignUpForm = () => {
   }
 
   return (
-    <div>
-      <h1>Cadastrar com email e senha</h1>
+    <div className='sign-up-container'>
+      <h2>Ainda não tem conta?</h2>
+      <span>Cadastrar com email e senha</span>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor=''>Display name</label>
-        <input
+        <FormInput
+          label='Nome Completo'
           type='text'
           name='displayName'
           required
@@ -59,8 +63,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor=''>Email</label>
-        <input
+        <FormInput
+          label='Email'
           type='email'
           name='email'
           required
@@ -68,8 +72,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor=''>Senha</label>
-        <input
+        <FormInput
+          label='Senha'
           type='password'
           name='password'
           required
@@ -77,8 +81,8 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor=''>Confirmar senha</label>
-        <input
+        <FormInput
+          label='Confirmar senha'
           type='password'
           name='confirmPassword'
           required
