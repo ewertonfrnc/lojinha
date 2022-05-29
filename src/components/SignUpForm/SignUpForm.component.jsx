@@ -95,7 +95,7 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <Button buttonType='inverted'>Criar conta</Button>
+        <Button type='submit'>Criar conta</Button>
       </form>
     </div>
   )
