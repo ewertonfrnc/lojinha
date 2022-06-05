@@ -14,13 +14,7 @@ import { signOutUser } from '../../utils/firebase/firebase.utils'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext)
-  console.log(currentUser)
-
-  const signOutHandler = async () => {
-    await signOutUser()
-    setCurrentUser(null)
-  }
+  const { currentUser } = useContext(UserContext)
 
   return (
     <>
@@ -35,7 +29,7 @@ const Navigation = () => {
           </Link>
 
           {currentUser ? (
-            <span className='nav-link' onClick={signOutHandler}>
+            <span className='nav-link' onClick={signOutUser}>
               SAIR
             </span>
           ) : (
