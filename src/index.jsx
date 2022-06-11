@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 // Context providers
 import { UserProvider } from './contexts/user.context'
+import { ProductsProvider } from './contexts/products.context'
 
 import './index.scss'
 import App from './App'
@@ -16,7 +17,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <App />
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
