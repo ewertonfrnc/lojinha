@@ -1,48 +1,56 @@
-import React, { useContext } from 'react'
-import './navigation.styles.scss'
+import React, { useContext } from "react";
+import "./navigation.styles.scss";
 
 // ROUTE
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link } from "react-router-dom";
 
 // Context
-import { UserContext } from '../../contexts/user.context'
+import { UserContext } from "../../contexts/user.context";
 
 // Firebase
-import { signOutUser } from '../../utils/firebase/firebase.utils'
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
-// LOGO COMPONENT FROM CREATE-REACT-APP
-import { ReactComponent as Logo } from '../../assets/crown.svg'
+// COMPONENTS
+import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CartIcon from "../../components/CartIcon/CartIcon.component";
+import CartDropdown from "../../components/CartDropdown/CartDropdown.component";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext)
+  const { currentUser } = useContext(UserContext);
 
   return (
     <>
-      <nav className='navigation'>
-        <Link className='logo-container' to='/'>
-          <Logo className='logo' />
+      <nav className="navigation">
+        <Link className="logo-container" to="/">
+          <Logo className="logo" />
         </Link>
 
-        <div className='nav-links-container'>
-          <Link className='nav-link' to='/shop'>
+        <div className="nav-links-container">
+          <Link className="nav-link" to="/shop">
             LOJA
           </Link>
 
           {currentUser ? (
-            <span className='nav-link' onClick={signOutUser}>
+            <span className="nav-link" onClick={signOutUser}>
               SAIR
             </span>
           ) : (
-            <Link className='nav-link' to='/auth'>
+            <Link className="nav-link" to="/auth">
               ENTRAR
             </Link>
           )}
+
+          <Link className="nav-link" to="/shop">
+            <CartIcon />
+          </Link>
         </div>
+
+        <CartDropdown />
       </nav>
 
       <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
