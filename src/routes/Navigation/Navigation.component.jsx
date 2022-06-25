@@ -1,34 +1,56 @@
-import React from 'react'
-import './navigation.styles.scss'
+import React, { useContext } from "react";
+import "./navigation.styles.scss";
 
 // ROUTE
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link } from "react-router-dom";
 
-// LOGO COMPONENT FROM CREATE-REACT-APP
-import { ReactComponent as Logo } from '../../assets/crown.svg'
+// Context
+import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
+
+// Firebase
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+
+// COMPONENTS
+import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CartIcon from "../../components/CartIcon/CartIcon.component";
+import CartDropdown from "../../components/CartDropdown/CartDropdown.component";
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
+
   return (
     <>
-      <nav className='navigation'>
-        <Link className='logo-container' to='/'>
-          <Logo className='logo' />
+      <nav className="navigation">
+        <Link className="logo-container" to="/">
+          <Logo className="logo" />
         </Link>
 
-        <div className='nav-links-container'>
-          <Link className='nav-link' to='/shop'>
-            SHOP
+        <div className="nav-links-container">
+          <Link className="nav-link" to="/shop">
+            LOJA
           </Link>
 
-          <Link className='nav-link' to='/auth'>
-            SIGN IN
-          </Link>
+          {currentUser ? (
+            <span className="nav-link" onClick={signOutUser}>
+              SAIR
+            </span>
+          ) : (
+            <Link className="nav-link" to="/auth">
+              ENTRAR
+            </Link>
+          )}
+
+          <CartIcon />
         </div>
+
+        {isCartOpen && <CartDropdown />}
       </nav>
 
       <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
