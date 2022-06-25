@@ -1,56 +1,62 @@
-import React, { useContext } from "react";
-import "./navigation.styles.scss";
+import React, { useContext } from 'react'
 
 // ROUTE
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from 'react-router-dom'
 
 // Context
-import { UserContext } from "../../contexts/user.context";
-import { CartContext } from "../../contexts/cart.context";
+import { UserContext } from '../../contexts/user.context'
+import { CartContext } from '../../contexts/cart.context'
 
 // Firebase
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+import { signOutUser } from '../../utils/firebase/firebase.utils'
 
 // COMPONENTS
-import { ReactComponent as Logo } from "../../assets/crown.svg";
-import CartIcon from "../../components/CartIcon/CartIcon.component";
-import CartDropdown from "../../components/CartDropdown/CartDropdown.component";
+import { ReactComponent as Logo } from '../../assets/crown.svg'
+import CartIcon from '../../components/CartIcon/CartIcon.component'
+import CartDropdown from '../../components/CartDropdown/CartDropdown.component'
+
+import {
+  NavigationContainer,
+  LogoContainer,
+  NavLinksContainer,
+  NavLink,
+} from './navigation.styles'
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
-  const { isCartOpen } = useContext(CartContext);
+  const { currentUser } = useContext(UserContext)
+  const { isCartOpen } = useContext(CartContext)
 
   return (
     <>
-      <nav className="navigation">
-        <Link className="logo-container" to="/">
+      <NavigationContainer>
+        <LogoContainer to="/">
           <Logo className="logo" />
-        </Link>
+        </LogoContainer>
 
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
+        <NavLinksContainer>
+          <NavLink className="nav-link" to="/shop">
             LOJA
-          </Link>
+          </NavLink>
 
           {currentUser ? (
-            <span className="nav-link" onClick={signOutUser}>
+            <NavLink as="span" className="nav-link" onClick={signOutUser}>
               SAIR
-            </span>
+            </NavLink>
           ) : (
-            <Link className="nav-link" to="/auth">
+            <NavLink className="nav-link" to="/auth">
               ENTRAR
-            </Link>
+            </NavLink>
           )}
 
           <CartIcon />
-        </div>
+        </NavLinksContainer>
 
         {isCartOpen && <CartDropdown />}
-      </nav>
+      </NavigationContainer>
 
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
