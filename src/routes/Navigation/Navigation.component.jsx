@@ -4,11 +4,14 @@ import React, { useContext } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
 // Context
-import { UserContext } from '../../contexts/user.context'
 import { CartContext } from '../../contexts/cart.context'
 
 // Firebase
 import { signOutUser } from '../../utils/firebase/firebase.utils'
+
+// Redux
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from '../../store/user/user.selector'
 
 // COMPONENTS
 import { ReactComponent as Logo } from '../../assets/crown.svg'
@@ -23,7 +26,7 @@ import {
 } from './navigation.styles'
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext)
+  const currentUser = useSelector(selectCurrentUser)
   const { isCartOpen } = useContext(CartContext)
 
   return (
