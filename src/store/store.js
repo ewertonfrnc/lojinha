@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 
 import { rootReducer } from './root-reducer'
 
-const persistConfig = { key: 'root', storage, blacklist: ['user'] },
+const persistConfig = { key: 'root', storage, whitelist: ['cart'] },
   persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const middlewares = [
