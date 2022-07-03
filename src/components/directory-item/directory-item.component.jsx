@@ -17,7 +17,7 @@ const DirectoryItem = ({ category }) => {
 
       <Body>
         <h2>{title}</h2>
-        <p>Comprar agora</p>
+        <p>Buy now</p>
       </Body>
     </DirectoryItemContainer>
   )
