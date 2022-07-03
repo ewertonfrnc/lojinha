@@ -3,13 +3,11 @@ import React, { useContext } from 'react'
 // ROUTE
 import { Outlet, Link } from 'react-router-dom'
 
-// Firebase
-import { signOutUser } from '../../utils/firebase/firebase.utils'
-
 // Redux
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { selectCurrentUser } from '../../store/user/user.selector'
 import { selectIsCartOpen } from '../../store/cart/cart.selector'
+import { signOutStart } from '../../store/user/user.action'
 
 // COMPONENTS
 import { ReactComponent as Logo } from '../../assets/crown.svg'
@@ -24,8 +22,11 @@ import {
 } from './navigation.styles'
 
 const Navigation = () => {
+  const dispatch = useDispatch()
   const currentUser = useSelector(selectCurrentUser),
     isCartOpen = useSelector(selectIsCartOpen)
+
+  const signOutUser = () => dispatch(signOutStart())
 
   return (
     <>
