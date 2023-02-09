@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState, FormEvent, ChangeEvent } from 'react'
 
 // redux
 import { useDispatch } from 'react-redux/es/exports'
@@ -25,31 +25,20 @@ const SignInForm = () => {
 
   const resetFormFields = () => setFormFields(defaultFormFields)
 
-  const handleChange = e => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
 
     setFormFields({ ...formFields, [name]: value })
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     try {
       dispatch(emailSignInStart(email, password))
       resetFormFields()
     } catch (error) {
-      switch (error.message) {
-        case 'auth/wrong-password':
-          alert('Senha incorreta para este email.')
-          break
-
-        case 'auth/user-not-found':
-          alert('Não há usuário associado com este email.')
-          break
-
-        default:
-          console.log(error)
-      }
+      console.log('user sign in failed', error)
     }
   }
 
@@ -62,7 +51,7 @@ const SignInForm = () => {
       <h2>Já tem uma conta?</h2>
       <span>Acesse com seu email e senha</span>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={e => handleSubmit(e)}>
         <FormInput
           label="Email"
           type="email"

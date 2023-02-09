@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 // Component
@@ -14,8 +14,14 @@ import {
 
 import './catgory.styles.scss'
 
+type CategoryRouteParams = {
+  category: string
+}
+
 const Category = () => {
-  const { category } = useParams(),
+  const { category } = useParams<
+      keyof CategoryRouteParams
+    >() as CategoryRouteParams,
     categoriesMap = useSelector(selectCategoriesMap),
     isLoading = useSelector(selectCategoriesIsLoading),
     [products, setProducts] = useState(categoriesMap[category])
