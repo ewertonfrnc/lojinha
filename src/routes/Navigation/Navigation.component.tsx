@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
-
 // ROUTE
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux'
