@@ -48,8 +48,8 @@ const SignInForm = () => {
 
   return (
     <div className="sign-up-container">
-      <h2>Já tem uma conta?</h2>
-      <span>Acesse com seu email e senha</span>
+      <h2>Already have an account?</h2>
+      <span>Log in with email and password</span>
 
       <form onSubmit={e => handleSubmit(e)}>
         <FormInput
@@ -62,7 +62,7 @@ const SignInForm = () => {
         />
 
         <FormInput
-          label="Senha"
+          label="Password"
           type="password"
           name="password"
           required
@@ -71,14 +71,14 @@ const SignInForm = () => {
         />
 
         <div className="buttons-container">
-          <Button type="submit">Entrar</Button>
+          <Button type="submit">Sign in</Button>
 
           <Button
             type="button"
             buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={SignInWithGoogle}
           >
-            Entrar com Google
+            Sign in with Google
           </Button>
         </div>
       </form>

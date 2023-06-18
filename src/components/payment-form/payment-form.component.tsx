@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent } from 'react'
+import { useState, FormEvent } from 'react'
 
 import { useSelector } from 'react-redux'
 import { selectCartTotal } from '../../store/cart/cart.selector'
