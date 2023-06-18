@@ -5,8 +5,9 @@ import Button from '../Button/Button.component'
 import CartItem from '../cart-item/cart-item.component'
 
 // Redux
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { selectCartItems } from '../../store/cart/cart.selector'
+import { setIsCartOpen } from '../../store/cart/cart.action'
 
 import {
   CartDropdownContainer,
@@ -15,10 +16,14 @@ import {
 } from './cart-dropdown.styles'
 
 const CartDropdown = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const cartItems = useSelector(selectCartItems)
 
-  const goToCheckoutHandler = () => navigate('/checkout')
+  const goToCheckoutHandler = () => {
+    dispatch(setIsCartOpen())
+    navigate('/checkout')
+  }
 
   return (
     <CartDropdownContainer>
