@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5abf0a1-8f6a-4043-ba25-2641e0ee11a3" name="Changes" comment="feat: new testing for button component">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/CartIcon/__tests__/cart-icon.component.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/test/test.utils.js" afterDir="false" />
+    <list default="true" id="b5abf0a1-8f6a-4043-ba25-2641e0ee11a3" name="Changes" comment="feat: tests for cart-icon.component.test.js">
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/Navigation/__tests__/navigation.component.tests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/test/test.utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/test/test.utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722472548137</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: tests for cart-icon.component.test.js">
+      <option name="closed" value="true" />
+      <created>1722546185172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722546185172</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: new testing for button component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: new testing for button component" />
+    <MESSAGE value="feat: tests for cart-icon.component.test.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: tests for cart-icon.component.test.js" />
   </component>
 </project>

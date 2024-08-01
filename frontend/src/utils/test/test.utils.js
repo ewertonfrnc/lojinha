@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { rootReducer } from '../../store/root-reducer'
 
+import { BrowserRouter } from 'react-router-dom'
+
 export function renderWithProviders(
   ui,
   {
@@ -13,7 +15,11 @@ export function renderWithProviders(
   } = {},
 ) {
   function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>
+    return (
+      <Provider store={store}>
+        <BrowserRouter>{children}</BrowserRouter>
+      </Provider>
+    )
   }
 
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
