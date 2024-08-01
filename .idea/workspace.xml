@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5abf0a1-8f6a-4043-ba25-2641e0ee11a3" name="Changes" comment="feat: tests for navigation.component.tests.js">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProductCard/__tests__/product-card.component.tests.js" afterDir="false" />
+    <list default="true" id="b5abf0a1-8f6a-4043-ba25-2641e0ee11a3" name="Changes" comment="feat: finish navigation tests">
+      <change afterPath="$PROJECT_DIR$/frontend/src/routes/category/__tests__/category.component.tests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/Navigation/__tests__/navigation.component.tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/Navigation/__tests__/navigation.component.tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/spinner/spinner.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/spinner/spinner.component.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722547597706</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: finish navigation tests">
+      <option name="closed" value="true" />
+      <created>1722549486008</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722549486008</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +142,7 @@
     <MESSAGE value="feat: new testing for button component" />
     <MESSAGE value="feat: tests for cart-icon.component.test.js" />
     <MESSAGE value="feat: tests for navigation.component.tests.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: tests for navigation.component.tests.js" />
+    <MESSAGE value="feat: finish navigation tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: finish navigation tests" />
   </component>
 </project>
